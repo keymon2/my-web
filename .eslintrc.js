@@ -1,0 +1,61 @@
+module.exports = {
+  env: {
+    browser: true,
+    es2021: true,
+    node: true,
+  },
+  extends: [
+    'eslint:recommended',
+    'plugin:react/recommended',
+    'plugin:@typescript-eslint/recommended',
+    'airbnb-typescript',
+    'prettier',
+  ],
+  parser: '@typescript-eslint/parser',
+  parserOptions: {
+    ecmaFeatures: {
+      jsx: true,
+    },
+    ecmaVersion: 'latest',
+    sourceType: 'module',
+    project: ['./tsconfig.json'],
+    files: ['*.ts', '*.tsx', '*.d.ts'],
+    tsconfigRootDir: __dirname,
+  },
+  plugins: ['react', '@typescript-eslint', 'react-hooks', 'import', 'jsx-a11y'],
+  rules: {
+    'react-hooks/rules-of-hooks': 'error', // Checks rules of Hooks
+    'react-hooks/exhaustive-deps': 'warn', // Checks effect dependencies},
+    'no-empty-function': 'off',
+    '@typescript-eslint/no-empty-function': ['warn', { allow: ['constructors'] }],
+    '@typescript-eslint/semi': [1, 'never'],
+    '@typescript-eslint/quotes': ['error', 'single'],
+    '@typescript-eslint/comma-dangle': [0],
+    '@typescript-eslint/no-use-before-define': [0],
+    '@typescript-eslint/no-unused-vars': [1],
+    '@typescript-eslint/naming-convention': [1],
+    '@typescript-eslint/no-explicit-any': [1],
+    'import/prefer-default-export': 0,
+    'comma-dangle': 0,
+    'react/button-has-type': [0],
+    'jsx-a11y/alt-text': [1],
+    // 'no-console': [2],
+    'react/prop-types': [0],
+    'import/no-extraneous-dependencies': ['error', { devDependencies: ['**/*.test.js', '**/*.spec.js'] }],
+    semi: 0,
+    'import/no-unresolved': 'error',
+    // "import/named": "error",
+    // "import/namespace": "error",
+    // "import/default": "error",
+    // "import/export": "error",
+    'import/order': [
+      'error',
+      {
+        groups: ['builtin', 'external', 'parent', 'sibling', 'index'],
+        alphabetize: {
+          order: 'asc',
+        },
+      },
+    ],
+  },
+}

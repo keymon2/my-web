@@ -7,6 +7,7 @@
       "esnext"
     ],
     "allowJs": true,
+    "typeRoots": ["./node_modules/@types","@type"],
     "skipLibCheck": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
@@ -20,7 +21,6 @@
     "noEmit": true,
     "jsx": "react-jsx"
   },
-  "include": [
-    "src"
-  ]
+  "include": ["src/**/*","./.eslintrc.js", "./types/*.d.ts"],
+  "exclude": ["node_modules", "**/*.spec.ts"]
 }
